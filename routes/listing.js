@@ -14,7 +14,7 @@ router.get("/category/:category", wrapAsync(listingController.filterByCategory))
 router
  .route("/")
  .get( wrapAsync(listingController.index))
- .post(isLoggedIn,upload.single(`image`),validateListing,
+ .post(isLoggedIn,upload.single(`listing[image][url]`),validateListing,
      wrapAsync(listingController.createListings));
 
 router.get("/new",isLoggedIn, listingController.renderNewForm);
@@ -23,7 +23,7 @@ router
 .route("/:id")
 .get(wrapAsync(listingController.showListings))
 .put(isLoggedIn,isOwner,
-     upload.single(`image`),
+     upload.single(`listing[image][url]`),
     validateListing,
      wrapAsync(listingController.updateListings))
 .delete(isLoggedIn,isOwner,
