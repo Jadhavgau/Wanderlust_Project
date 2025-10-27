@@ -72,17 +72,17 @@ body {
     object-fit: cover !important;
 }
 
-.tax-toggle .form-switch {
+.form-check.form-switch {
   display: flex;
-  align-items: center;
-  gap: 10px; 
-  margin-bottom: 10px;              
+  align-items: center; 
+  gap: 8px;            
 }
 
-/* Make toggle look neat */
-.tax-toggle .form-check-input {
-  width: 2.5em;
-  height: 1.3em;
+.form-check-input {
+  width: 2em !important;
+  height: 1em !important;
+  transform: scale(0.9);
+  margin-top: 0 !important; 
 }
 
 
