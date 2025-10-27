@@ -67,8 +67,24 @@ body {
 .card-img-top {
     border-radius: 1rem !important;
     width: 100% !important;
+    height: 20rem !important;
+    margin-bottom: 15px !important;
     object-fit: cover !important;
 }
+
+.tax-toggle .form-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 10px;              
+}
+
+/* Make toggle look neat */
+.tax-toggle .form-check-input {
+  width: 2.5em;
+  height: 1.3em;
+}
+
 
 .card-body{
     padding: 0 !important;
@@ -122,4 +138,10 @@ body {
 #map {
  height: 400px;
  width: 100vh;
+}
+
+@media (max-width: 768px) {
+  .card-img-top {
+    margin-bottom: 15px;   
+  }
 }
