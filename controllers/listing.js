@@ -1,5 +1,34 @@
 const Listing = require("../models/listing");
 
+module.exports.filterByCategory = async (req, res) => {
+  const category = req.params.category;
+  const listings = await Listing.find({ category });
+  if (!listings || listings.length === 0) {
+    return res.render("listings/index", { allListings: [], category, query: null });
+  }
+
+  res.render("listings/index", { allListings: listings, category, query: null });
+};
+
+
+module.exports.searchListings = async (req, res) => {
+  const query = req.query.q;
+  if (!query || query.trim() === "") {
+    const listings = await Listing.find({});
+    return res.render("listings/index", { allListings: listings, category: null, query });
+  }
+
+  const listings = await Listing.find({
+    $or: [
+      { title: { $regex: query, $options: "i" } },
+      { location: { $regex: query, $options: "i" } },
+      { category: { $regex: query, $options: "i" } }
+    ]
+  });
+
+  res.render("listings/index", { listings, query, category: null });
+};
+
 module.exports.index = async(req, res) => {
    const allListings = await Listing.find({});
    res.render("./listings/index.ejs", {allListings});
