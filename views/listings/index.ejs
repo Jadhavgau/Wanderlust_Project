@@ -36,6 +36,39 @@
     display: flex;
     align-items: center;
   }
+
+  /* Mobile responsive fix for filters section */
+@media (max-width: 768px) {
+  #filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    margin: 0 1rem 0 0;
+    opacity: 0.8;
+  }
+
+  .filter p {
+    font-size: 0.7rem;
+  }
+
+  .tax-toggle {
+    margin: 0.5rem 0 0 0;
+    padding: 0.5rem 1rem;
+    flex: 0 0 100%;
+    font-size: 0.8rem;
+  }
+
+  .tax-toggle label {
+    white-space: nowrap;
+  }
+}
+
 </style>
     
 <div id="filters">
