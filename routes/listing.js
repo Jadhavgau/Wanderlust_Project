@@ -8,7 +8,6 @@ const multer = require("multer");
 const {storage} = require("../cloudconfig.js");
 const upload = multer({ storage});
 
-router.get("/search", wrapAsync(listingController.searchListings));
 router.get("/category/:category", wrapAsync(listingController.filterByCategory));
 
 router
