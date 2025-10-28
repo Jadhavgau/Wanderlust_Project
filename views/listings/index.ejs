@@ -72,57 +72,57 @@
 </style>
 
 <div id="filters">
-  <a href="/category/Trending" class="filter">
+  <a href="listings/category/Trending" class="filter">
     <div><i class="fa-solid fa-fire"></i></div>
     <p>Trending</p>
   </a>
 
-  <a href="/category/Rooms" class="filter">
+  <a href="listings/category/Rooms" class="filter">
     <div><i class="fa-solid fa-bed"></i></div>
     <p>Rooms</p>
   </a>
 
-  <a href="/category/Iconic%20Cities" class="filter">
+  <a href="listings/category/Iconic Cities" class="filter">
     <div><i class="fa-solid fa-mountain-city"></i></div>
     <p>Iconic cities</p>
   </a>
 
-  <a href="/category/Mountains" class="filter">
+  <a href="listings/category/Mountains" class="filter">
     <div><i class="fa-solid fa-mountain"></i></div>
     <p>Mountains</p>
   </a>
 
-  <a href="/category/Castles" class="filter">
+  <a href="listings/category/Castles" class="filter">
     <div><i class="fa-brands fa-fort-awesome"></i></div>
     <p>Castles</p>
   </a>
 
-  <a href="/category/Amazing%20Pools" class="filter">
+  <a href="listings/category/Amazing Pools" class="filter">
     <div><i class="fa-solid fa-person-swimming"></i></div>
     <p>Amazing Pools</p>
   </a>
 
-  <a href="/category/Camping" class="filter">
+  <a href="listings/category/Camping" class="filter">
     <div><i class="fa-solid fa-campground"></i></div>
     <p>Camping</p>
   </a>
 
-  <a href="/category/Farms" class="filter">
+  <a href="listings/category/Farms" class="filter">
     <div><i class="fa-solid fa-cow"></i></div>
     <p>Farms</p>
   </a>
 
-  <a href="/category/Arctic" class="filter">
+  <a href="listings/category/Arctic" class="filter">
     <div><i class="fa-solid fa-snowflake"></i></div>
     <p>Arctic</p>
   </a>
 
-  <a href="/category/Domes" class="filter">
+  <a href="listings/category/Domes" class="filter">
     <div><i class="fa-solid fa-igloo"></i></div>
     <p>Domes</p>
   </a>
 
-  <a href="/category/Boats" class="filter">
+  <a href="listings/category/Boats" class="filter">
     <div><i class="fa-solid fa-ship"></i></div>
     <p>Boats</p>
   </a>
@@ -134,6 +134,13 @@
     </div>
   </div>
 </div>
+
+<% if (query) { %>
+  <h4 class="mt-3 mb-2 text-center text-secondary fw-semibold">
+    Search results for "<%= query %>"
+  </h4>
+<% } %>
+
       <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for (let listing of allListings) { %> 
       <a href="/listings/<%= listing._id %>" class="listing-link">
